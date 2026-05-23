@@ -6,20 +6,82 @@
 <title>Ragnar Czr</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{background:#050505;color:white;overflow-x:hidden}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+  background:#050505;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* CHOICE SCREEN */
 
 .choice-screen{
-  min-height:100vh;display:flex;align-items:center;justify-content:center;gap:35px;padding:30px;
-  background:linear-gradient(135deg,#050505,#170024)
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:35px;
+  padding:30px;
+  background:
+  linear-gradient(135deg,#050505,#170024);
 }
+
 .choice{
-  width:430px;height:560px;border-radius:32px;overflow:hidden;cursor:pointer;position:relative;
-  border:2px solid rgba(168,85,247,.5);box-shadow:0 0 45px rgba(168,85,247,.45)
+  width:430px;
+  height:560px;
+  border-radius:32px;
+  overflow:hidden;
+  cursor:pointer;
+  position:relative;
+  transition:.3s;
+  border:2px solid rgba(168,85,247,.5);
+  box-shadow:0 0 45px rgba(168,85,247,.45);
 }
-.choice img{width:100%;height:100%;object-fit:cover;filter:brightness(.7)}
-.choice-text{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:end;align-items:center;padding:40px;text-align:center;background:linear-gradient(transparent,rgba(0,0,0,.92))}
-.choice-text h1{font-size:46px;text-transform:uppercase;text-shadow:0 0 20px #a855f7}
+
+.choice:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 65px rgba(168,85,247,.9);
+}
+
+.choice img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(.72);
+}
+
+.choice-text{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+  align-items:center;
+  padding:40px;
+  text-align:center;
+  background:linear-gradient(transparent,rgba(0,0,0,.92));
+}
+
+.choice-text h1{
+  font-size:46px;
+  text-transform:uppercase;
+  text-shadow:0 0 20px #a855f7;
+}
+
+.choice-text p{
+  margin-top:10px;
+  color:#ddd;
+  font-size:18px;
+}
+
+/* SITE */
 
 .site{
   display:none;
@@ -35,8 +97,10 @@ body{background:#050505;color:white;overflow-x:hidden}
   display:flex;
   flex-direction:column;
   align-items:center;
-  background:rgba(0,0,0,.10);
+  background:rgba(0,0,0,.08);
 }
+
+/* BANNER */
 
 .banner{
   width:100%;
@@ -56,148 +120,354 @@ body{background:#050505;color:white;overflow-x:hidden}
   display:block;
 }
 
+/* CARD */
+
 .card{
   width:100%;
   max-width:460px;
+
   margin-top:70px;
+
   padding:38px 34px 30px;
+
   border-radius:32px;
+
   text-align:center;
-  background:rgba(5,5,12,.90);
-  border:1px solid rgba(168,85,247,.45);
-  box-shadow:0 0 50px rgba(168,85,247,.75);
+
+  background:rgba(5,5,12,.45);
+
+  backdrop-filter:blur(8px);
+
+  border:1px solid rgba(168,85,247,.35);
+
+  box-shadow:
+  0 0 35px rgba(168,85,247,.45);
+
+  position:relative;
 }
 
 .avatar{
-  width:120px;height:120px;border-radius:50%;overflow:hidden;
+  width:120px;
+  height:120px;
+
+  border-radius:50%;
+
+  overflow:hidden;
+
   margin:-100px auto 22px;
+
   border:4px solid #8b2cff;
-  box-shadow:0 0 35px rgba(168,85,247,1);
+
+  box-shadow:
+  0 0 35px rgba(168,85,247,1);
+
   background:#111;
 }
-.avatar img{width:100%;height:100%;object-fit:cover}
 
-.card h2{font-size:42px;text-transform:uppercase;letter-spacing:3px;margin-bottom:10px}
-.subtitle{color:#c084fc;font-size:18px;margin-bottom:18px}
-.desc{color:#eee;font-size:17px;margin-bottom:26px}
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.card h2{
+  font-size:42px;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  color:#c084fc;
+  font-size:18px;
+  margin-bottom:18px;
+}
+
+.desc{
+  color:#eee;
+  font-size:17px;
+  margin-bottom:26px;
+}
+
+/* BUTTONS */
 
 .btn{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  width:100%;padding:18px;margin:14px 0;border-radius:18px;
-  text-decoration:none;color:white;font-size:20px;font-weight:bold;
-  background:linear-gradient(135deg,#8b2cff,#ff00b7);
-  box-shadow:0 0 28px rgba(255,0,183,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  width:100%;
+
+  padding:18px;
+
+  margin:14px 0;
+
+  border-radius:18px;
+
+  text-decoration:none;
+
+  color:white;
+
+  font-size:20px;
+
+  font-weight:bold;
+
+  background:
+  linear-gradient(135deg,#8b2cff,#ff00b7);
+
+  box-shadow:
+  0 0 28px rgba(255,0,183,.55);
+
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:scale(1.03);
 }
 
 .switch{
-  margin-top:15px;background:transparent;border:1px solid rgba(255,255,255,.22);
-  color:white;padding:11px 18px;border-radius:14px;cursor:pointer
+  margin-top:15px;
+  background:transparent;
+  border:1px solid rgba(255,255,255,.22);
+  color:white;
+  padding:11px 18px;
+  border-radius:14px;
+  cursor:pointer;
 }
-.footer{margin-top:22px;color:#bbb;font-size:14px}
+
+.footer{
+  margin-top:22px;
+  color:#bbb;
+  font-size:14px;
+}
+
+/* MOBILE */
 
 @media(max-width:900px){
-  .choice-screen{flex-direction:column}
-  .choice{width:100%;max-width:360px;height:300px}
-  .site{padding:12px}
-  .banner{height:150px;border-radius:22px}
-  .card{max-width:360px;margin-top:60px;padding:28px 22px}
-  .avatar{width:100px;height:100px;margin-top:-80px}
-  .card h2{font-size:32px}
-  .subtitle{font-size:14px}
-  .desc{font-size:15px}
-  .btn{font-size:17px;padding:15px}
+
+  .choice-screen{
+    flex-direction:column;
+  }
+
+  .choice{
+    width:100%;
+    max-width:360px;
+    height:300px;
+  }
+
+  .site{
+    padding:12px;
+  }
+
+  .banner{
+    height:150px;
+    border-radius:22px;
+  }
+
+  .card{
+    max-width:360px;
+    margin-top:60px;
+    padding:28px 22px;
+  }
+
+  .avatar{
+    width:100px;
+    height:100px;
+    margin-top:-80px;
+  }
+
+  .card h2{
+    font-size:32px;
+  }
+
+  .subtitle{
+    font-size:14px;
+  }
+
+  .desc{
+    font-size:15px;
+  }
+
+  .btn{
+    font-size:17px;
+    padding:15px;
+  }
+
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- CHOICE -->
+
 <section class="choice-screen" id="choiceScreen">
+
   <div class="choice" onclick="loadTheme('ragnar')">
-    <img src="ragnar-banner.png?v=3">
+
+    <img src="ragnar-banner.png?v=5">
+
     <div class="choice-text">
       <h1>Ragnar</h1>
       <p>Syndicate • B-Zone</p>
     </div>
+
   </div>
 
   <div class="choice" onclick="loadTheme('strugurel')">
+
     <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop">
+
     <div class="choice-text">
       <h1>Strugurel</h1>
       <p>TikTok • Mafia Style</p>
     </div>
+
   </div>
+
 </section>
 
+<!-- SITE -->
+
 <main class="site" id="site">
+
   <div class="overlay">
 
+    <!-- BANNER -->
+
     <section class="banner">
+
       <img id="bannerImg">
+
     </section>
 
+    <!-- CARD -->
+
     <section class="card">
+
       <div class="avatar">
         <img id="avatarImg">
       </div>
 
       <h2 id="cardTitle"></h2>
+
       <div class="subtitle" id="subtitle"></div>
+
       <div class="desc" id="description"></div>
 
-      <a class="btn" href="#" target="_blank">🎮 Discord</a>
-      <a class="btn" href="#" target="_blank">🎵 TikTok</a>
-      <a class="btn" href="#" target="_blank">▶️ YouTube</a>
-      <a class="btn" href="#" target="_blank">❤️ Donații</a>
+      <a class="btn" href="#" target="_blank">
+        🎮 Discord
+      </a>
 
-      <button class="switch" onclick="backToChoice()">Schimbă tema</button>
+      <a class="btn" href="#" target="_blank">
+        🎵 TikTok
+      </a>
+
+      <a class="btn" href="#" target="_blank">
+        ▶️ YouTube
+      </a>
+
+      <a class="btn" href="#" target="_blank">
+        ❤️ Donații
+      </a>
+
+      <button class="switch" onclick="backToChoice()">
+        Schimbă tema
+      </button>
+
       <div class="footer" id="footer"></div>
+
     </section>
 
   </div>
+
 </main>
 
 <script>
+
 const themes = {
+
   ragnar:{
-    background:"linear-gradient(rgba(0,0,0,.10),rgba(0,0,0,.30)), url('ragnar-bg.png?v=3')",
-    banner:"ragnar-banner.png?v=3",
-    avatar:"ragnar-banner.png?v=3",
+
+    background:
+    "linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.20)), url('ragnar-bg.png?v=5')",
+
+    banner:"ragnar-banner.png?v=5",
+
+    avatar:"ragnar-banner.png?v=5",
+
     title:"RAGNAR",
+
     subtitle:"Syndicate • B-Zone • Los Santos",
-    description:"Sindicatul conduce jocul. Restul doar participă.",
+
+    description:
+    "Sindicatul conduce jocul. Restul doar participă.",
+
     footer:"powered by Ragnar Czr ⚡"
+
   },
+
   strugurel:{
-    background:"linear-gradient(rgba(20,0,35,.35),rgba(0,0,0,.70)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop')",
-    banner:"https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
-    avatar:"https://i.imgur.com/8Km9tLL.png",
+
+    background:
+    "linear-gradient(rgba(20,0,35,.35),rgba(0,0,0,.70)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop')",
+
+    banner:
+    "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
+
+    avatar:
+    "https://i.imgur.com/8Km9tLL.png",
+
     title:"STRUGUREL",
+
     subtitle:"TikTok • Mafia Style",
-    description:"Taptap și energie de boss 🍇",
-    footer:"powered by Strugurel 🍇"
+
+    description:
+    "Taptap și energie de boss 🍇",
+
+    footer:
+    "powered by Strugurel 🍇"
+
   }
+
 };
 
 function loadTheme(name){
+
   const t=themes[name];
+
   document.getElementById("choiceScreen").style.display="none";
+
   const site=document.getElementById("site");
+
   site.style.display="block";
+
   site.style.backgroundImage=t.background;
+
   document.getElementById("bannerImg").src=t.banner;
+
   document.getElementById("avatarImg").src=t.avatar;
+
   document.getElementById("cardTitle").innerText=t.title;
+
   document.getElementById("subtitle").innerText=t.subtitle;
+
   document.getElementById("description").innerText=t.description;
+
   document.getElementById("footer").innerText=t.footer;
+
 }
 
 function backToChoice(){
+
   document.getElementById("site").style.display="none";
+
   document.getElementById("choiceScreen").style.display="flex";
+
 }
+
 </script>
 
 </body>
