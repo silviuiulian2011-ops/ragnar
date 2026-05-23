@@ -16,28 +16,37 @@
 
 html,body{
     width:100%;
-    min-height:100vh;
+    min-height:100%;
     overflow-x:hidden;
+    background:#050505;
 }
 
 body{
 
-    color:white;
-
-    background-image:
-    linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.35)),
+    background:
+    linear-gradient(rgba(0,0,0,.10),rgba(0,0,0,.38)),
     url("main-bg-pc.png");
 
-    background-size:cover;
+    background-size:contain;
     background-position:center center;
     background-repeat:no-repeat;
-    background-attachment:fixed;
+    background-color:#050505;
+
+    color:white;
+}
+
+/* MAIN */
+
+.main{
+
+    width:100%;
+    min-height:100vh;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    padding:25px;
+    padding:30px 15px;
 }
 
 /* CARD */
@@ -45,7 +54,7 @@ body{
 .card{
 
     width:100%;
-    max-width:460px;
+    max-width:430px;
 
     padding:35px 30px;
 
@@ -56,7 +65,7 @@ body{
     border:1px solid rgba(255,255,255,.08);
 
     box-shadow:
-    0 0 35px rgba(168,85,247,.18);
+    0 0 35px rgba(168,85,247,.22);
 
     text-align:center;
 }
@@ -91,7 +100,7 @@ body{
 
 h1{
 
-    font-size:56px;
+    font-size:52px;
 
     letter-spacing:4px;
 
@@ -105,7 +114,7 @@ h1{
 
     color:#c084fc;
 
-    font-size:21px;
+    font-size:20px;
 
     margin-bottom:20px;
 }
@@ -147,9 +156,9 @@ h1{
 
     color:white;
 
-    background:rgba(0,0,0,.25);
+    background:rgba(255,255,255,.06);
 
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.10);
 
     transition:.25s;
 }
@@ -158,10 +167,10 @@ h1{
 
     transform:scale(1.03);
 
-    background:rgba(168,85,247,.22);
+    background:rgba(168,85,247,.20);
 
     box-shadow:
-    0 0 25px rgba(168,85,247,.35);
+    0 0 25px rgba(168,85,247,.4);
 }
 
 /* FOOTER */
@@ -181,16 +190,28 @@ h1{
 
     body{
 
-        background-image:
-        linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.42)),
+        background:
+        linear-gradient(rgba(0,0,0,.10),rgba(0,0,0,.45)),
         url("main-bg-mobile.png");
 
         background-size:cover;
         background-position:center center;
         background-repeat:no-repeat;
-        background-attachment:scroll;
+        background-color:#050505;
+    }
 
-        padding:20px;
+    html,body{
+        background-color:#050505;
+    }
+
+    .main{
+
+        min-height:100vh;
+
+        align-items:center;
+        justify-content:center;
+
+        padding:20px 15px;
     }
 
     .card{
@@ -210,7 +231,7 @@ h1{
 
     h1{
 
-        font-size:38px;
+        font-size:36px;
     }
 
     .subtitle{
@@ -236,40 +257,44 @@ h1{
 
 <body>
 
-<div class="card">
+<div class="main">
 
-    <div class="logo">
-        <img src="main-bg-mobile.png">
-    </div>
+    <div class="card">
 
-    <h1>RAGNAR</h1>
+        <div class="logo">
+            <img src="main-bg-pc.png">
+        </div>
 
-    <div class="subtitle">
-        Syndicate • B-Zone • Los Santos
-    </div>
+        <h1>RAGNAR</h1>
 
-    <div class="desc">
-        Sindicatul conduce jocul. Restul doar participă.
-    </div>
+        <div class="subtitle">
+            Syndicate • B-Zone • Los Santos
+        </div>
 
-    <a class="btn" href="#">
-        🎮 Discord
-    </a>
+        <div class="desc">
+            Sindicatul conduce jocul. Restul doar participă.
+        </div>
 
-    <a class="btn" href="#">
-        🎵 TikTok
-    </a>
+        <a class="btn" href="#">
+            🎮 Discord
+        </a>
 
-    <a class="btn" href="#">
-        ▶️ YouTube
-    </a>
+        <a class="btn" href="#">
+            🎵 TikTok
+        </a>
 
-    <a class="btn" href="#">
-        ❤️ Donații
-    </a>
+        <a class="btn" href="#">
+            ▶️ YouTube
+        </a>
 
-    <div class="footer">
-        powered by Ragnar Czr ⚡
+        <a class="btn" href="#">
+            ❤️ Donații
+        </a>
+
+        <div class="footer">
+            powered by Ragnar Czr ⚡
+        </div>
+
     </div>
 
 </div>
