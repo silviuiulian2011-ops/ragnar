@@ -2,167 +2,225 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ragnar Czr</title>
 
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, Helvetica, sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    body{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  overflow-x:hidden;
-  background:#0a0a0a;
-  color:white;
-  position:relative;
-  padding-top:180px;
-}
-.banner{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:260px;
-  overflow:hidden;
-}
-
-.banner img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:brightness(0.45);
-}
-    .bg{
-      position:absolute;
-      width:200%;
-      height:200%;
+    body {
+      min-height: 100vh;
       background:
-      radial-gradient(circle at center, #7b2ff7 0%, transparent 25%),
-      radial-gradient(circle at top left, #00c6ff 0%, transparent 20%),
-      radial-gradient(circle at bottom right, #ff00aa 0%, transparent 20%);
-      animation:moveBg 15s linear infinite;
-      filter:blur(80px);
-      opacity:0.7;
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+        url("https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      overflow-x: hidden;
+      padding: 30px 15px;
     }
 
-    @keyframes moveBg{
-      0%{transform:translate(0,0);}
-      50%{transform:translate(-10%,-10%);}
-      100%{transform:translate(0,0);}
+    .page {
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .card{
-      position:relative;
-      z-index:2;
-      width:380px;
-      padding:40px;
-      border-radius:30px;
-      backdrop-filter:blur(20px);
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.1);
-      text-align:center;
-      box-shadow:0 0 40px rgba(123,47,247,0.4);
-      margin-bottom:50px;
+    .banner {
+      width: 100%;
+      max-width: 950px;
+      height: 260px;
+      border-radius: 30px;
+      overflow: hidden;
+      margin-bottom: -70px;
+      border: 2px solid rgba(255,255,255,0.18);
+      box-shadow: 0 0 45px rgba(145, 0, 255, 0.65);
+      position: relative;
     }
 
-    .avatar{
-      width:120px;
-      height:120px;
-      margin:auto;
-      border-radius:50%;
-      border:4px solid #a855f7;
-      overflow:hidden;
-      box-shadow:0 0 25px #a855f7;
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.75) contrast(1.15);
     }
 
-    .avatar img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
+    .banner-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.55));
+      padding: 20px;
     }
 
-    h1{
-      margin-top:20px;
-      font-size:32px;
-      letter-spacing:2px;
+    .banner-text h1 {
+      font-size: 54px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px #a855f7;
     }
 
-    p{
-      margin-top:10px;
-      color:#ccc;
-      margin-bottom:30px;
+    .banner-text p {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #ddd;
+      letter-spacing: 2px;
     }
 
-    .btn{
-      display:block;
-      text-decoration:none;
-      color:white;
-      margin:15px 0;
-      padding:16px;
-      border-radius:16px;
-      font-size:18px;
-      transition:0.3s;
-      font-weight:bold;
-      background:linear-gradient(45deg,#7b2ff7,#f107a3);
-      box-shadow:0 0 20px rgba(241,7,163,0.4);
+    .card {
+      width: 100%;
+      max-width: 420px;
+      margin-top: 100px;
+      padding: 35px;
+      border-radius: 30px;
+      text-align: center;
+      background: rgba(15, 15, 20, 0.78);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 0 40px rgba(168, 85, 247, 0.55);
+      position: relative;
+      z-index: 2;
     }
 
-    .btn:hover{
-      transform:scale(1.05);
-      box-shadow:0 0 30px rgba(241,7,163,0.8);
+    .avatar {
+      width: 125px;
+      height: 125px;
+      margin: -95px auto 20px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #a855f7;
+      box-shadow: 0 0 30px #a855f7;
+      background: #111;
     }
 
-    .footer{
-      margin-top:25px;
-      font-size:13px;
-      color:#888;
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card h2 {
+      font-size: 32px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .card p {
+      color: #cfcfcf;
+      margin: 10px 0 28px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 17px;
+      margin: 14px 0;
+      border-radius: 18px;
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #7b2ff7, #f107a3);
+      box-shadow: 0 0 22px rgba(241, 7, 163, 0.45);
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(241, 7, 163, 0.9);
+    }
+
+    .footer {
+      margin-top: 24px;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 18px 12px;
+      }
+
+      .banner {
+        height: 190px;
+        border-radius: 22px;
+        margin-bottom: -55px;
+      }
+
+      .banner-text h1 {
+        font-size: 34px;
+        letter-spacing: 2px;
+      }
+
+      .banner-text p {
+        font-size: 13px;
+      }
+
+      .card {
+        max-width: 360px;
+        padding: 28px 22px;
+        margin-top: 85px;
+      }
+
+      .avatar {
+        width: 105px;
+        height: 105px;
+        margin-top: -78px;
+      }
+
+      .card h2 {
+        font-size: 26px;
+      }
+
+      .btn {
+        font-size: 16px;
+        padding: 15px;
+      }
     }
   </style>
 </head>
+
 <body>
+  <main class="page">
 
-  <div class="bg"></div>
-<div class="banner">
-  <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop">
-</div>
-  <div class="card">
+    <section class="banner">
+      <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?q=80&w=1600&auto=format&fit=crop" alt="Banner mafiot GTA style">
+      <div class="banner-text">
+        <h1>Ragnar Czr</h1>
+        <p>Cap de mafie • GTA V • Live Community</p>
+      </div>
+    </section>
 
-    <div class="avatar">
-      <img src="https://i.imgur.com/8Km9tLL.png">
-    </div>
+    <section class="card">
+      <div class="avatar">
+        <img src="https://i.imgur.com/8Km9tLL.png" alt="Avatar">
+      </div>
 
-    <h1>RagnarCzr</h1>
+      <h2>Ragnar Czr</h2>
+      <p>Intră în familie. Restul e istorie.</p>
 
-    <p>Bine ai venit 👑</p>
+      <a class="btn" href="https://discord.gg/LINKUL-TAU" target="_blank">Discord</a>
+      <a class="btn" href="https://www.tiktok.com/" target="_blank">TikTok</a>
+      <a class="btn" href="https://youtube.com/" target="_blank">YouTube</a>
+      <a class="btn" href="https://paypal.me/" target="_blank">Donații</a>
 
-    <a class="btn" href="https://discord.gg/LINKUL-TAU" target="_blank">
-      Discord
-    </a>
+      <div class="footer">
+        powered by Ragnar Czr ⚡
+      </div>
+    </section>
 
-    <a class="btn" href="https://www.tiktok.com/" target="_blank">
-      TikTok
-    </a>
-
-    <a class="btn" href="https://youtube.com/" target="_blank">
-      YouTube
-    </a>
-
-    <a class="btn" href="https://paypal.me/" target="_blank">
-      Donații
-    </a>
-
-    <div class="footer">
-      powered by Silviu ⚡
-    </div>
-
-  </div>
-
+  </main>
 </body>
 </html>
