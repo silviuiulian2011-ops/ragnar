@@ -23,13 +23,15 @@ html,body{
 body{
 
     background:
-    linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.35)),
-    url("main-bg.png?v=12");
+    linear-gradient(rgba(0,0,0,.10),rgba(0,0,0,.35)),
+    url("main-bg.png?v=13");
 
+    /* AICI E FIXUL IMPORTANT */
     background-size:cover;
     background-position:center center;
     background-repeat:no-repeat;
     background-attachment:fixed;
+
     background-color:#050505;
 
     color:white;
@@ -60,7 +62,7 @@ body{
 
     border-radius:35px;
 
-    /* OVERLAY TRANSPARENT */
+    /* TRANSPARENTA */
     background:rgba(0,0,0,.25);
 
     /* FARA BLUR */
@@ -72,7 +74,7 @@ body{
     border:1px solid rgba(255,255,255,.08);
 
     box-shadow:
-    0 0 35px rgba(168,85,247,.18);
+    0 0 35px rgba(168,85,247,.20);
 
     text-align:center;
 }
@@ -163,12 +165,10 @@ h1{
 
     color:white;
 
-    /* TRANSPARENT */
-    background:rgba(0,0,0,.20);
+    background:rgba(0,0,0,.25);
 
     border:1px solid rgba(255,255,255,.08);
 
-    /* FARA BLUR */
     backdrop-filter:none;
     -webkit-backdrop-filter:none;
 
@@ -204,12 +204,14 @@ h1{
 
         background:
         linear-gradient(rgba(0,0,0,.10),rgba(0,0,0,.45)),
-        url("main-bg.png?v=12");
+        url("main-bg.png?v=13");
 
+        /* FIX IMPORTANT MOBILE */
         background-size:cover;
         background-position:center center;
         background-repeat:no-repeat;
         background-attachment:scroll;
+
         background-color:#050505;
     }
 
@@ -226,7 +228,7 @@ h1{
 
         padding:25px 22px;
 
-        background:rgba(0,0,0,.10);
+        background:rgba(0,0,0,.25);
     }
 
     .logo{
@@ -255,6 +257,8 @@ h1{
         font-size:18px;
 
         padding:15px;
+
+        background:rgba(0,0,0,.25);
     }
 }
 
@@ -268,7 +272,7 @@ h1{
     <div class="card">
 
         <div class="logo">
-            <img src="main-bg.png?v=12">
+            <img src="main-bg.png?v=13">
         </div>
 
         <h1>RAGNAR</h1>
