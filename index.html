@@ -6,314 +6,191 @@
 <title>Ragnar Czr</title>
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial,Helvetica,sans-serif;
-}
-
-body{
-
-  min-height:100vh;
-
-  background:
-  linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.40)),
-  url("main-bg.png?v=3");
-
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
-
+html,body{
+  width:100%;
+  min-height:100%;
+  background:#050505;
   color:white;
-
   overflow-x:hidden;
 }
 
-/* PAGE */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.42)),
+    url("main-bg.png?v=4");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  z-index:-2;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle,rgba(168,85,247,.12),rgba(0,0,0,.25));
+  z-index:-1;
+}
 
 .page{
-
-  min-height:100vh;
-
+  min-height:100svh;
   display:flex;
-
   align-items:flex-end;
-
   justify-content:center;
-
-  padding:30px 16px 40px;
+  padding:30px 16px 35px;
 }
-
-/* CARD */
 
 .card{
-
   width:100%;
   max-width:430px;
-
-  padding:38px 32px 28px;
-
+  padding:34px 30px 26px;
   border-radius:32px;
-
   text-align:center;
-
-  background:rgba(0,0,0,.10);
-
+  background:rgba(0,0,0,.13);
   backdrop-filter:blur(3px);
   -webkit-backdrop-filter:blur(3px);
-
   border:1px solid rgba(255,255,255,.08);
-
-  box-shadow:
-  0 0 35px rgba(168,85,247,.22);
-
+  box-shadow:0 0 35px rgba(168,85,247,.22);
 }
 
-/* LOGO */
-
 .logo{
-
-  width:105px;
-  height:105px;
-
-  margin:0 auto 20px;
-
+  width:100px;
+  height:100px;
+  margin:0 auto 18px;
   border-radius:50%;
-
   overflow:hidden;
-
   border:4px solid #8b2cff;
-
-  box-shadow:
-  0 0 35px rgba(168,85,247,1);
-
+  box-shadow:0 0 35px rgba(168,85,247,1);
   background:#111;
 }
 
 .logo img{
-
   width:100%;
   height:100%;
-
   object-fit:cover;
 }
 
-/* TEXT */
-
 h1{
-
   font-size:42px;
-
   letter-spacing:4px;
-
   text-transform:uppercase;
-
   margin-bottom:10px;
-
-  text-shadow:
-  0 0 18px rgba(168,85,247,.75);
+  text-shadow:0 0 18px rgba(168,85,247,.75);
 }
 
 .subtitle{
-
   color:#c084fc;
-
   font-size:18px;
-
   margin-bottom:14px;
 }
 
 .desc{
-
   color:#f1f1f1;
-
   font-size:17px;
-
-  margin-bottom:26px;
+  margin-bottom:24px;
 }
-
-/* BUTTONS */
 
 .btn{
-
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   gap:10px;
-
   width:100%;
-
-  padding:17px;
-
-  margin:14px 0;
-
+  padding:16px;
+  margin:13px 0;
   border-radius:18px;
-
   text-decoration:none;
-
   color:white;
-
   font-size:20px;
-
   font-weight:bold;
-
-  background:
-  rgba(255,255,255,.06);
-
+  background:rgba(255,255,255,.07);
   backdrop-filter:blur(6px);
   -webkit-backdrop-filter:blur(6px);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  box-shadow:
-  0 0 18px rgba(168,85,247,.15);
-
-  transition:.25s;
+  border:1px solid rgba(255,255,255,.09);
+  box-shadow:0 0 18px rgba(168,85,247,.16);
 }
-
-.btn:hover{
-
-  transform:scale(1.03);
-
-  background:
-  rgba(255,255,255,.12);
-
-  box-shadow:
-  0 0 28px rgba(168,85,247,.45);
-}
-
-/* FOOTER */
 
 .footer{
-
-  margin-top:22px;
-
+  margin-top:20px;
   color:#ddd;
-
   font-size:14px;
 }
 
-/* MOBILE */
-
 @media(max-width:900px){
-
-  body{
-
-    background-position:center top;
-
-    background-attachment:scroll;
+  body::before{
+    background:
+      linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.75)),
+      url("main-bg.png?v=4");
+    background-size:100% auto;
+    background-position:top center;
+    background-repeat:no-repeat;
   }
 
   .page{
-
+    min-height:100svh;
     align-items:flex-end;
-
-    padding:24px 14px;
+    padding:260px 14px 22px;
   }
 
   .card{
-
     max-width:360px;
-
-    padding:28px 22px;
+    padding:24px 20px;
+    background:rgba(0,0,0,.18);
   }
 
   .logo{
-
-    width:90px;
-    height:90px;
+    width:82px;
+    height:82px;
   }
 
   h1{
-
-    font-size:32px;
+    font-size:31px;
   }
 
   .subtitle{
-
     font-size:14px;
   }
 
   .desc{
-
     font-size:15px;
   }
 
   .btn{
-
     font-size:17px;
-
-    padding:15px;
+    padding:14px;
   }
-
 }
-
 </style>
 </head>
 
 <body>
 
 <main class="page">
-
   <section class="card">
 
     <div class="logo">
-
-      <img src="main-bg.png?v=3" alt="Ragnar Czr">
-
+      <img src="main-bg.png?v=4" alt="Ragnar Czr">
     </div>
 
     <h1>RAGNAR</h1>
 
-    <div class="subtitle">
+    <div class="subtitle">Syndicate • B-Zone • Los Santos</div>
 
-      Syndicate • B-Zone • Los Santos
+    <div class="desc">Sindicatul conduce jocul. Restul doar participă.</div>
 
-    </div>
+    <a class="btn" href="#" target="_blank">🎮 Discord</a>
+    <a class="btn" href="#" target="_blank">🎵 TikTok</a>
+    <a class="btn" href="#" target="_blank">▶️ YouTube</a>
+    <a class="btn" href="#" target="_blank">❤️ Donații</a>
 
-    <div class="desc">
-
-      Sindicatul conduce jocul. Restul doar participă.
-
-    </div>
-
-    <a class="btn" href="#" target="_blank">
-
-      🎮 Discord
-
-    </a>
-
-    <a class="btn" href="#" target="_blank">
-
-      🎵 TikTok
-
-    </a>
-
-    <a class="btn" href="#" target="_blank">
-
-      ▶️ YouTube
-
-    </a>
-
-    <a class="btn" href="#" target="_blank">
-
-      ❤️ Donații
-
-    </a>
-
-    <div class="footer">
-
-      powered by Ragnar Czr ⚡
-
-    </div>
+    <div class="footer">powered by Ragnar Czr ⚡</div>
 
   </section>
-
 </main>
 
 </body>
