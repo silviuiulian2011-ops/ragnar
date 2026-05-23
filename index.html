@@ -2,50 +2,277 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ragnar Czr / Strugurel</title>
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-    body{min-height:100vh;color:white;overflow-x:hidden;background:#050505}
-    .choice-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;gap:30px;padding:25px;background:linear-gradient(135deg,#050505,#160022)}
-    .choice{width:420px;height:560px;border-radius:32px;overflow:hidden;cursor:pointer;position:relative;border:2px solid rgba(255,255,255,.18);box-shadow:0 0 35px rgba(168,85,247,.35);transition:.3s}
-    .choice:hover{transform:scale(1.04);box-shadow:0 0 55px rgba(168,85,247,.8)}
-    .choice img{width:100%;height:100%;object-fit:cover;filter:brightness(.55)}
-    .choice-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:end;text-align:center;padding:35px;background:linear-gradient(transparent,rgba(0,0,0,.9))}
-    .choice-text h1{font-size:42px;text-transform:uppercase;text-shadow:0 0 18px #a855f7}
-    .choice-text p{margin-top:8px;color:#ddd}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,Helvetica,sans-serif;
+    }
 
-    .site{display:none;min-height:100vh;padding:30px 15px;background-size:cover;background-position:center}
-    .overlay{min-height:calc(100vh - 60px);display:flex;flex-direction:column;align-items:center}
-    .banner{width:100%;max-width:950px;height:260px;border-radius:30px;overflow:hidden;margin-bottom:-70px;border:2px solid rgba(255,255,255,.18);box-shadow:0 0 45px var(--glow);position:relative}
-    .banner img{width:100%;height:100%;object-fit:cover;filter:brightness(.72) contrast(1.15)}
-    .banner-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.6));padding:20px}
-    .banner-text h1{font-size:54px;letter-spacing:4px;text-transform:uppercase;text-shadow:0 0 22px var(--glow)}
-    .banner-text p{margin-top:10px;font-size:18px;color:#ddd;letter-spacing:2px}
+    body{
+      background:#050505;
+      overflow-x:hidden;
+      color:white;
+    }
 
-    .card{width:100%;max-width:420px;margin-top:100px;padding:35px;border-radius:30px;text-align:center;background:rgba(15,15,20,.80);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.15);box-shadow:0 0 40px var(--glow);z-index:2}
-    .avatar{width:125px;height:125px;margin:-95px auto 20px;border-radius:50%;overflow:hidden;border:4px solid var(--main);box-shadow:0 0 30px var(--glow);background:#111}
-    .avatar img{width:100%;height:100%;object-fit:cover}
-    .card h2{font-size:32px;text-transform:uppercase;letter-spacing:2px}
-    .card p{color:#cfcfcf;margin:10px 0 28px}
-    .btn{display:block;width:100%;padding:17px;margin:14px 0;border-radius:18px;text-decoration:none;color:white;font-size:18px;font-weight:bold;background:linear-gradient(135deg,var(--main),var(--second));box-shadow:0 0 22px var(--glow);transition:.25s}
-    .btn:hover{transform:scale(1.05);box-shadow:0 0 35px var(--glow)}
-    .switch{margin-top:18px;background:transparent;border:1px solid rgba(255,255,255,.25);color:white;padding:11px 18px;border-radius:14px;cursor:pointer}
-    .footer{margin-top:22px;color:#aaa;font-size:13px}
+    .choice-screen{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:30px;
+      padding:30px;
+      background:linear-gradient(135deg,#050505,#1b0030);
+    }
 
-    @media(max-width:850px){
-      .choice-screen{flex-direction:column}
-      .choice{width:100%;max-width:360px;height:300px}
-      .choice-text h1{font-size:30px}
-      .site{padding:18px 12px}
-      .banner{height:190px;border-radius:22px;margin-bottom:-55px}
-      .banner-text h1{font-size:34px;letter-spacing:2px}
-      .banner-text p{font-size:13px}
-      .card{max-width:360px;padding:28px 22px;margin-top:85px}
-      .avatar{width:105px;height:105px;margin-top:-78px}
-      .card h2{font-size:26px}
-      .btn{font-size:16px;padding:15px}
+    .choice{
+      width:420px;
+      height:560px;
+      border-radius:30px;
+      overflow:hidden;
+      cursor:pointer;
+      position:relative;
+      transition:.3s;
+      border:2px solid rgba(255,255,255,.15);
+      box-shadow:0 0 35px rgba(168,85,247,.35);
+    }
+
+    .choice:hover{
+      transform:scale(1.03);
+      box-shadow:0 0 60px rgba(168,85,247,.8);
+    }
+
+    .choice img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:brightness(.65);
+    }
+
+    .choice-text{
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      justify-content:end;
+      align-items:center;
+      text-align:center;
+      padding:40px;
+      background:linear-gradient(transparent,rgba(0,0,0,.92));
+    }
+
+    .choice-text h1{
+      font-size:42px;
+      text-transform:uppercase;
+      text-shadow:0 0 20px #a855f7;
+    }
+
+    .choice-text p{
+      margin-top:10px;
+      color:#ddd;
+      font-size:18px;
+    }
+
+    .site{
+      display:none;
+      min-height:100vh;
+      padding:20px;
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+      position:relative;
+    }
+
+    .overlay{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      backdrop-filter:brightness(.55);
+    }
+
+    .banner{
+      width:100%;
+      max-width:1450px;
+      height:280px;
+      border-radius:35px;
+      overflow:hidden;
+      margin-bottom:-70px;
+      border:2px solid rgba(168,85,247,.45);
+      box-shadow:0 0 40px rgba(168,85,247,.7);
+      position:relative;
+    }
+
+    .banner img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .banner-text{
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      background:rgba(0,0,0,.35);
+    }
+
+    .banner-text h1{
+      font-size:70px;
+      letter-spacing:4px;
+      text-transform:uppercase;
+      text-shadow:0 0 25px var(--main);
+    }
+
+    .banner-text p{
+      margin-top:12px;
+      font-size:22px;
+      color:#eee;
+      letter-spacing:2px;
+    }
+
+    .card{
+      width:100%;
+      max-width:430px;
+      margin-top:90px;
+      padding:35px;
+      border-radius:30px;
+      text-align:center;
+      background:rgba(5,5,10,.82);
+      backdrop-filter:blur(8px);
+      border:1px solid rgba(168,85,247,.35);
+      box-shadow:0 0 35px rgba(168,85,247,.55);
+      position:relative;
+    }
+
+    .avatar{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      overflow:hidden;
+      margin:-90px auto 20px;
+      border:4px solid var(--main);
+      box-shadow:0 0 25px var(--main);
+      background:#111;
+    }
+
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .card h2{
+      font-size:50px;
+      margin-bottom:10px;
+      text-transform:uppercase;
+    }
+
+    .card p{
+      color:#ddd;
+      margin-bottom:25px;
+      font-size:20px;
+    }
+
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      padding:18px;
+      margin:14px 0;
+      border-radius:18px;
+      text-decoration:none;
+      color:white;
+      font-size:22px;
+      font-weight:bold;
+      background:linear-gradient(135deg,var(--main),var(--second));
+      box-shadow:0 0 25px rgba(168,85,247,.55);
+      transition:.25s;
+    }
+
+    .btn:hover{
+      transform:scale(1.03);
+      box-shadow:0 0 40px rgba(168,85,247,.9);
+    }
+
+    .switch{
+      margin-top:18px;
+      background:transparent;
+      border:1px solid rgba(255,255,255,.25);
+      color:white;
+      padding:12px 18px;
+      border-radius:14px;
+      cursor:pointer;
+      transition:.2s;
+    }
+
+    .switch:hover{
+      background:rgba(255,255,255,.08);
+    }
+
+    .footer{
+      margin-top:22px;
+      color:#bbb;
+      font-size:14px;
+    }
+
+    @media(max-width:900px){
+
+      .choice-screen{
+        flex-direction:column;
+      }
+
+      .choice{
+        width:100%;
+        max-width:360px;
+        height:300px;
+      }
+
+      .banner{
+        height:170px;
+        border-radius:25px;
+      }
+
+      .banner-text h1{
+        font-size:34px;
+      }
+
+      .banner-text p{
+        font-size:14px;
+      }
+
+      .card{
+        margin-top:70px;
+        padding:25px;
+      }
+
+      .avatar{
+        width:100px;
+        height:100px;
+        margin-top:-70px;
+      }
+
+      .card h2{
+        font-size:34px;
+      }
+
+      .card p{
+        font-size:16px;
+      }
+
+      .btn{
+        font-size:18px;
+        padding:15px;
+      }
     }
   </style>
 </head>
@@ -53,112 +280,167 @@
 <body>
 
   <section class="choice-screen" id="choiceScreen">
+
     <div class="choice" onclick="loadTheme('ragnar')">
-      <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?q=80&w=1200&auto=format&fit=crop">
+      <img src="ragnar-banner.png">
+
       <div class="choice-text">
-        <h1>Ragnar Czr</h1>
-        <p>GTA V • Mafia Boss</p>
+        <h1>Ragnar</h1>
+        <p>Syndicate • B-Zone</p>
       </div>
     </div>
 
     <div class="choice" onclick="loadTheme('strugurel')">
       <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop">
+
       <div class="choice-text">
         <h1>Strugurel</h1>
-        <p>Mov • TikTok • Mafiot</p>
+        <p>TikTok • Mafia Style</p>
       </div>
     </div>
+
   </section>
 
   <main class="site" id="site">
+
     <div class="overlay">
+
       <section class="banner">
+
         <img id="bannerImg">
+
         <div class="banner-text">
           <h1 id="title"></h1>
           <p id="subtitle"></p>
         </div>
+
       </section>
 
       <section class="card">
+
         <div class="avatar">
           <img id="avatarImg">
         </div>
 
         <h2 id="cardTitle"></h2>
+
         <p id="description"></p>
 
-        <a class="btn" href="https://discord.gg/LINKUL-TAU" target="_blank">Discord</a>
-        <a class="btn" href="https://www.tiktok.com/" target="_blank">TikTok</a>
-        <a class="btn" href="https://youtube.com/" target="_blank">YouTube</a>
-        <a class="btn" href="https://paypal.me/" target="_blank">Donații</a>
+        <a class="btn" href="#" target="_blank">
+          Discord
+        </a>
 
-        <button class="switch" onclick="backToChoice()">Schimbă tema</button>
+        <a class="btn" href="#" target="_blank">
+          TikTok
+        </a>
+
+        <a class="btn" href="#" target="_blank">
+          YouTube
+        </a>
+
+        <a class="btn" href="#" target="_blank">
+          Donații
+        </a>
+
+        <button class="switch" onclick="backToChoice()">
+          Schimbă tema
+        </button>
 
         <div class="footer" id="footer"></div>
+
       </section>
+
     </div>
+
   </main>
 
   <script>
+
     const themes = {
+
       ragnar: {
-  main: "#7b2ff7",
-  second: "#f107a3",
-  glow: "rgba(168,85,247,.75)",
 
-  background: "linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.90)), url('ragnar-bg.png')",
+        main:"#8b2cff",
+        second:"#ff00b7",
 
-  banner: "ragnar-banner.png",
+        background:"linear-gradient(rgba(0,0,0,.30),rgba(0,0,0,.75)), url('ragnar-bg.png')",
 
-  avatar: "ragnar-banner.png",
+        banner:"ragnar-banner.png",
 
-  title: "Ragnar",
-  subtitle: "Syndicate • B-Zone • Los Santos",
+        avatar:"ragnar-banner.png",
 
-  description: "Sindicatul conduce jocul. Restul doar participă.",
+        title:"RAGNAR",
 
-  footer: "powered by Ragnar Czr ⚡"
-},
+        subtitle:"Syndicate • B-Zone • Los Santos",
+
+        description:"Sindicatul conduce jocul. Restul doar participă.",
+
+        footer:"powered by Ragnar Czr ⚡"
+
+      },
+
       strugurel: {
-        main: "#8b00ff",
-        second: "#c084fc",
-        glow: "rgba(192,132,252,.75)",
-        background: "linear-gradient(rgba(20,0,35,.72),rgba(0,0,0,.92)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop')",
-        banner: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
-        avatar: "https://i.imgur.com/8Km9tLL.png",
-        title: "Strugurel",
-        subtitle: "TikTok • Mov • Boss de live",
-        description: "Taptap, energie și caterincă de familie.",
-        footer: "powered by Strugurel 🍇"
+
+        main:"#8b00ff",
+        second:"#c026d3",
+
+        background:"linear-gradient(rgba(20,0,35,.45),rgba(0,0,0,.80)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop')",
+
+        banner:"https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
+
+        avatar:"https://i.imgur.com/8Km9tLL.png",
+
+        title:"STRUGUREL",
+
+        subtitle:"TikTok • Mafia Style",
+
+        description:"Taptap și energie de boss 🍇",
+
+        footer:"powered by Strugurel 🍇"
+
       }
+
     };
 
     function loadTheme(name){
+
       const t = themes[name];
 
-      document.body.style.setProperty("--main", t.main);
-      document.body.style.setProperty("--second", t.second);
-      document.body.style.setProperty("--glow", t.glow);
+      document.body.style.setProperty('--main', t.main);
+      document.body.style.setProperty('--second', t.second);
 
-      document.getElementById("choiceScreen").style.display = "none";
-      const site = document.getElementById("site");
-      site.style.display = "block";
-      site.style.backgroundImage = t.background;
+      document.getElementById('choiceScreen').style.display='none';
 
-      document.getElementById("bannerImg").src = t.banner;
-      document.getElementById("avatarImg").src = t.avatar;
-      document.getElementById("title").innerText = t.title;
-      document.getElementById("subtitle").innerText = t.subtitle;
-      document.getElementById("cardTitle").innerText = t.title;
-      document.getElementById("description").innerText = t.description;
-      document.getElementById("footer").innerText = t.footer;
+      const site=document.getElementById('site');
+
+      site.style.display='block';
+
+      site.style.backgroundImage=t.background;
+
+      document.getElementById('bannerImg').src=t.banner;
+
+      document.getElementById('avatarImg').src=t.banner;
+
+      document.getElementById('title').innerText=t.title;
+
+      document.getElementById('subtitle').innerText=t.subtitle;
+
+      document.getElementById('cardTitle').innerText=t.title;
+
+      document.getElementById('description').innerText=t.description;
+
+      document.getElementById('footer').innerText=t.footer;
+
     }
 
     function backToChoice(){
-      document.getElementById("site").style.display = "none";
-      document.getElementById("choiceScreen").style.display = "flex";
+
+      document.getElementById('site').style.display='none';
+
+      document.getElementById('choiceScreen').style.display='flex';
+
     }
+
   </script>
 
 </body>
