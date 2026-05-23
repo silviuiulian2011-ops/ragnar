@@ -6,6 +6,7 @@
 <title>Ragnar Czr</title>
 
 <style>
+
 *{
   margin:0;
   padding:0;
@@ -15,25 +16,34 @@
 
 body{
   min-height:100vh;
+
   background:
-    linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.55)),
-    url("main-bg.png?v=1");
+  linear-gradient(rgba(0,0,0,.10),rgba(0,0,0,.45)),
+  url("main-bg.png?v=2");
+
   background-size:cover;
   background-position:center;
   background-attachment:fixed;
+
   color:white;
+
   overflow-x:hidden;
 }
 
 .page{
   min-height:100vh;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   padding:30px 16px;
 }
 
+/* CARD */
+
 .card{
+
   width:100%;
   max-width:430px;
 
@@ -46,7 +56,6 @@ body{
   background:rgba(0,0,0,.12);
 
   backdrop-filter:blur(3px);
-
   -webkit-backdrop-filter:blur(3px);
 
   border:1px solid rgba(255,255,255,.08);
@@ -56,14 +65,24 @@ body{
 
 }
 
+/* LOGO */
+
 .logo{
+
   width:105px;
   height:105px;
+
   margin:0 auto 20px;
+
   border-radius:50%;
+
   overflow:hidden;
+
   border:4px solid #8b2cff;
-  box-shadow:0 0 35px rgba(168,85,247,1);
+
+  box-shadow:
+  0 0 35px rgba(168,85,247,1);
+
   background:#111;
 }
 
@@ -73,11 +92,16 @@ body{
   object-fit:cover;
 }
 
+/* TEXT */
+
 h1{
   font-size:42px;
   letter-spacing:4px;
   text-transform:uppercase;
   margin-bottom:10px;
+
+  text-shadow:
+  0 0 18px rgba(168,85,247,.75);
 }
 
 .subtitle{
@@ -87,12 +111,15 @@ h1{
 }
 
 .desc{
-  color:#eee;
+  color:#f1f1f1;
   font-size:17px;
   margin-bottom:26px;
 }
 
+/* BUTTONS */
+
 .btn{
+
   display:flex;
   align-items:center;
   justify-content:center;
@@ -118,7 +145,6 @@ h1{
   rgba(255,255,255,.08);
 
   backdrop-filter:blur(6px);
-
   -webkit-backdrop-filter:blur(6px);
 
   border:1px solid rgba(255,255,255,.10);
@@ -130,17 +156,26 @@ h1{
 }
 
 .btn:hover{
-  transform:scale(1.035);
-  box-shadow:0 0 40px rgba(255,0,183,.85);
+
+  transform:scale(1.03);
+
+  background:
+  rgba(255,255,255,.14);
+
+  box-shadow:
+  0 0 28px rgba(168,85,247,.45);
 }
 
 .footer{
   margin-top:22px;
-  color:#bbb;
+  color:#ddd;
   font-size:14px;
 }
 
+/* MOBILE */
+
 @media(max-width:900px){
+
   body{
     background-position:center top;
     background-attachment:scroll;
@@ -148,7 +183,7 @@ h1{
 
   .page{
     align-items:flex-end;
-    padding:30px 14px;
+    padding:24px 14px;
   }
 
   .card{
@@ -177,7 +212,9 @@ h1{
     font-size:17px;
     padding:15px;
   }
+
 }
+
 </style>
 </head>
 
@@ -188,7 +225,7 @@ h1{
   <section class="card">
 
     <div class="logo">
-      <img src="main-bg.png?v=1" alt="Ragnar Czr">
+      <img src="main-bg.png?v=2" alt="Ragnar Czr">
     </div>
 
     <h1>RAGNAR</h1>
@@ -201,10 +238,21 @@ h1{
       Sindicatul conduce jocul. Restul doar participă.
     </div>
 
-    <a class="btn" href="#" target="_blank">🎮 Discord</a>
-    <a class="btn" href="#" target="_blank">🎵 TikTok</a>
-    <a class="btn" href="#" target="_blank">▶️ YouTube</a>
-    <a class="btn" href="#" target="_blank">❤️ Donații</a>
+    <a class="btn" href="#" target="_blank">
+      🎮 Discord
+    </a>
+
+    <a class="btn" href="#" target="_blank">
+      🎵 TikTok
+    </a>
+
+    <a class="btn" href="#" target="_blank">
+      ▶️ YouTube
+    </a>
+
+    <a class="btn" href="#" target="_blank">
+      ❤️ Donații
+    </a>
 
     <div class="footer">
       powered by Ragnar Czr ⚡
