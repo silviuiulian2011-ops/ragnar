@@ -6,30 +6,24 @@
 <title>Ragnar Czr</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 
 html,body{
   width:100%;
   min-height:100vh;
-  overflow-x:hidden;
   background:#050505;
   color:white;
+  overflow-x:hidden;
 }
 
 body{
   background:
-    linear-gradient(rgba(0,0,0,.10),rgba(0,0,0,.35)),
-    url("main-bg.png?v=20");
-
-  background-size:cover;
+    linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.25)),
+    url("main-bg.png?v=99");
+  background-size:contain;
   background-position:center center;
   background-repeat:no-repeat;
-  background-attachment:fixed;
+  background-color:#050505;
 }
 
 .main{
@@ -75,18 +69,8 @@ h1{
   text-shadow:0 0 20px rgba(168,85,247,.8);
 }
 
-.subtitle{
-  color:#c084fc;
-  font-size:20px;
-  margin-bottom:20px;
-}
-
-.desc{
-  font-size:19px;
-  line-height:1.5;
-  color:#f1f1f1;
-  margin-bottom:30px;
-}
+.subtitle{color:#c084fc;font-size:20px;margin-bottom:20px}
+.desc{font-size:19px;line-height:1.5;color:#f1f1f1;margin-bottom:30px}
 
 .btn{
   width:100%;
@@ -109,63 +93,33 @@ h1{
 .btn:hover{
   transform:scale(1.03);
   background:rgba(168,85,247,.25);
-  box-shadow:0 0 25px rgba(168,85,247,.35);
 }
 
-.footer{
-  margin-top:24px;
-  color:#ddd;
-  font-size:15px;
-}
+.footer{margin-top:24px;color:#ddd;font-size:15px}
 
 @media(max-width:900px){
-
   body{
-    background:
-      linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.45)),
-      url("main-bg.png?v=20");
-
-    background-size:100% auto;
-    background-position:top center;
-    background-repeat:no-repeat;
-    background-attachment:scroll;
-    background-color:#050505;
+    background-size:contain;
+    background-position:center center;
   }
 
   .main{
     min-height:100vh;
-    align-items:flex-end;
-    padding:360px 15px 25px;
+    align-items:center;
+    padding:20px 15px;
   }
 
   .card{
     max-width:360px;
     padding:25px 22px;
-    background:rgba(0,0,0,.35);
+    background:rgba(0,0,0,.25);
   }
 
-  .logo{
-    width:85px;
-    height:85px;
-  }
-
-  h1{
-    font-size:36px;
-  }
-
-  .subtitle{
-    font-size:16px;
-  }
-
-  .desc{
-    font-size:16px;
-  }
-
-  .btn{
-    font-size:18px;
-    padding:15px;
-    background:rgba(0,0,0,.35);
-  }
+  .logo{width:85px;height:85px}
+  h1{font-size:36px}
+  .subtitle{font-size:16px}
+  .desc{font-size:16px}
+  .btn{font-size:18px;padding:15px}
 }
 </style>
 </head>
@@ -176,27 +130,19 @@ h1{
   <div class="card">
 
     <div class="logo">
-      <img src="main-bg.png?v=20">
+      <img src="main-bg.png?v=99">
     </div>
 
     <h1>RAGNAR</h1>
-
-    <div class="subtitle">
-      Syndicate • B-Zone • Los Santos
-    </div>
-
-    <div class="desc">
-      Sindicatul conduce jocul. Restul doar participă.
-    </div>
+    <div class="subtitle">Syndicate • B-Zone • Los Santos</div>
+    <div class="desc">Sindicatul conduce jocul. Restul doar participă.</div>
 
     <a class="btn" href="#">🎮 Discord</a>
     <a class="btn" href="#">🎵 TikTok</a>
     <a class="btn" href="#">▶️ YouTube</a>
     <a class="btn" href="#">❤️ Donații</a>
 
-    <div class="footer">
-      powered by Ragnar Czr ⚡
-    </div>
+    <div class="footer">powered by Ragnar Czr ⚡</div>
 
   </div>
 </div>
