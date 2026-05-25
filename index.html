@@ -333,12 +333,19 @@ h1 span{
     text-shadow:0 0 10px #d6a84f;
 }
 
-/* MOBILE PREMIUM */
+/* MOBILE - CARD SUS PE CER, DEASUPRA PERSONAJELOR */
 @media(max-width:900px){
+
+    html,body{
+        width:100%;
+        height:100%;
+        min-height:100svh;
+        overflow:hidden;
+    }
 
     body{
         background:
-        linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.42)),
+        linear-gradient(rgba(0,0,0,.10),rgba(0,0,0,.30)),
         url("main-bg-mobile.png");
 
         background-size:100% auto;
@@ -349,152 +356,158 @@ h1 span{
 
     .main{
         min-height:100svh;
-        padding:18px 8px 20px;
         align-items:flex-start;
         justify-content:center;
+        padding:24px 8px 0;
     }
 
     .card{
-        max-width:330px;
-        margin-top:62px;
-        padding:34px 16px 10px;
-        border-radius:18px;
+        width:92%;
+        max-width:350px;
+        padding:30px 12px 8px;
+        border-radius:15px;
+        transform:scale(.72);
+        transform-origin:top center;
+        margin-top:0;
 
         background:
-            radial-gradient(circle at top, rgba(214,168,79,.05), transparent 34%),
-            linear-gradient(180deg, rgba(10,12,14,.42), rgba(0,0,0,.20));
+            radial-gradient(circle at top, rgba(214,168,79,.04), transparent 34%),
+            linear-gradient(180deg, rgba(10,12,14,.38), rgba(0,0,0,.16));
 
-        border:1px solid rgba(255,215,120,.45);
+        border:1px solid rgba(255,215,120,.38);
 
         box-shadow:
-            0 0 0 1px rgba(255,255,255,.04) inset,
-            0 0 22px rgba(214,168,79,.12),
-            0 18px 50px rgba(0,0,0,.55);
+            0 0 0 1px rgba(255,255,255,.03) inset,
+            0 0 16px rgba(214,168,79,.10),
+            0 12px 35px rgba(0,0,0,.45);
 
-        backdrop-filter:blur(4px);
-        -webkit-backdrop-filter:blur(4px);
+        backdrop-filter:blur(3px);
+        -webkit-backdrop-filter:blur(3px);
     }
 
     .logo{
-        width:58px;
-        height:58px;
-        top:-27px;
+        width:54px;
+        height:54px;
+        top:-25px;
+        border-width:2px;
+        box-shadow:
+            0 0 0 3px rgba(0,0,0,.55),
+            0 0 14px rgba(214,168,79,.65);
+    }
+
+    .logo::before{
+        top:-13px;
+        font-size:15px;
     }
 
     h1{
-        font-size:25px;
+        font-size:22px;
         letter-spacing:2px;
-        margin-bottom:6px;
+        margin-bottom:5px;
     }
 
     h1 span{
-        font-size:16px;
-        letter-spacing:5px;
+        font-size:14px;
+        letter-spacing:4px;
         margin-top:2px;
     }
 
     .subtitle{
-        font-size:8px;
-        letter-spacing:3px;
-        gap:7px;
-        margin-bottom:10px;
+        font-size:7px;
+        letter-spacing:2px;
+        gap:5px;
+        margin-bottom:8px;
     }
 
     .subtitle::before,
     .subtitle::after{
-        width:22px;
+        width:18px;
     }
 
     .info-box{
-        margin:8px 0 10px;
-        gap:4px;
+        margin:6px 0 8px;
+        gap:3px;
     }
 
     .info-box div{
-        grid-template-columns:18px 1fr 1fr;
-        min-height:28px;
-        gap:6px;
-        padding:5px 8px;
-        border-radius:7px;
+        grid-template-columns:16px 1fr 1fr;
+        min-height:24px;
+        gap:5px;
+        padding:4px 7px;
+        border-radius:6px;
     }
 
     .info-box div::before{
-        font-size:13px;
+        font-size:10px;
     }
 
     .info-box strong{
-        font-size:8px;
-        letter-spacing:.5px;
+        font-size:7px;
+        letter-spacing:.3px;
     }
 
     .info-box span{
-        font-size:9px;
+        font-size:8px;
     }
 
     .section-title{
         font-size:7px;
-        letter-spacing:1.4px;
+        letter-spacing:1px;
         gap:5px;
-        margin:8px 0 8px;
-        line-height:1.15;
+        margin:7px 0 6px;
+        line-height:1.1;
     }
 
     .section-title::before,
     .section-title::after{
-        width:15px;
+        width:12px;
     }
 
     .links-grid{
         grid-template-columns:1fr 1fr;
-        gap:7px;
+        gap:5px;
     }
 
     .btn{
-        min-height:38px;
-        gap:6px;
-        padding:6px 8px;
-        border-radius:7px;
+        min-height:33px;
+        gap:5px;
+        padding:5px 6px;
+        border-radius:6px;
     }
 
     .btn img{
-        width:19px;
-        height:19px;
+        width:16px;
+        height:16px;
     }
 
     .btn span{
-        font-size:10px;
+        font-size:8px;
         letter-spacing:.2px;
     }
 
     .btn small{
-        margin-top:2px;
-        font-size:5px;
-        letter-spacing:.4px;
+        margin-top:1px;
+        font-size:4px;
+        letter-spacing:.2px;
     }
 
     .footer{
-        margin-top:8px;
-        font-size:7px;
+        margin-top:6px;
+        font-size:6px;
     }
 }
 
+/* TELEFOANE FOARTE MICI */
 @media(max-width:360px){
 
+    .main{
+        padding-top:20px;
+    }
+
     .card{
-        max-width:310px;
-        margin-top:58px;
-    }
-
-    h1{
-        font-size:25px;
-    }
-
-    h1 span{
-        font-size:17px;
-    }
-
-    .links-grid{
-        gap:6px;
+        max-width:330px;
+        transform:scale(.68);
+        transform-origin:top center;
     }
 }
 
