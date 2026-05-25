@@ -22,15 +22,11 @@ html,body{
 }
 
 /* BACKGROUND PC */
-
 body{
-
     color:white;
-
     background:
-    linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.45)),
+    linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.52)),
     url("main-bg-pc.png");
-
     background-size:cover;
     background-position:center center;
     background-repeat:no-repeat;
@@ -38,257 +34,311 @@ body{
 }
 
 /* MAIN */
-
 .main{
-
     width:100%;
     min-height:100vh;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     padding:30px 15px;
 }
 
-/* CARD */
-
+/* CARD PREMIUM */
 .card{
-
+    position:relative;
     width:100%;
-    max-width:470px;
-
-    padding:32px 30px 24px;
-
-    border-radius:30px;
-
+    max-width:520px;
+    padding:78px 42px 34px;
+    border-radius:28px;
     text-align:center;
-
-    background:rgba(0,0,0,.25);
-
-    border:1px solid rgba(255,215,120,.20);
-
+    background:
+        radial-gradient(circle at top, rgba(214,168,79,.10), transparent 34%),
+        linear-gradient(180deg, rgba(10,12,14,.78), rgba(0,0,0,.58));
+    border:1px solid rgba(255,215,120,.55);
     box-shadow:
-    0 0 35px rgba(0,0,0,.65);
+        0 0 0 1px rgba(255,255,255,.06) inset,
+        0 0 36px rgba(214,168,79,.22),
+        0 25px 80px rgba(0,0,0,.80);
+    backdrop-filter:blur(7px);
+    -webkit-backdrop-filter:blur(7px);
+    overflow:visible;
 }
 
+.card::before,
+.card::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:58%;
+    height:1px;
+    background:linear-gradient(90deg, transparent, rgba(255,215,120,.95), transparent);
+    box-shadow:0 0 12px rgba(214,168,79,.85);
+}
+
+.card::before{ top:-1px; }
+.card::after{ bottom:-1px; }
+
 /* AVATAR */
-
 .logo{
-
-    width:100px;
-    height:100px;
-
-    margin:0 auto 20px;
-
+    position:absolute;
+    top:-48px;
+    left:50%;
+    transform:translateX(-50%);
+    width:112px;
+    height:112px;
+    margin:0;
     border-radius:50%;
-
     overflow:hidden;
-
     border:3px solid #d6a84f;
-
+    background:#050505;
     box-shadow:
-    0 0 22px rgba(214,168,79,.65);
+        0 0 0 5px rgba(0,0,0,.62),
+        0 0 24px rgba(214,168,79,.85),
+        0 0 50px rgba(214,168,79,.35);
+}
+
+.logo::before{
+    content:"♛";
+    position:absolute;
+    top:-17px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#d6a84f;
+    font-size:20px;
+    text-shadow:0 0 10px rgba(214,168,79,.9);
+    z-index:2;
 }
 
 .logo img{
-
     width:100%;
     height:100%;
-
     object-fit:cover;
 }
 
 /* TITLES */
-
 h1{
-
-    font-size:54px;
-
-    letter-spacing:4px;
-
-    margin-bottom:10px;
-
+    font-size:56px;
+    line-height:.95;
+    letter-spacing:7px;
+    margin-bottom:14px;
     color:white;
-
     text-shadow:
-    0 0 18px rgba(0,0,0,.95);
+        0 2px 0 rgba(0,0,0,.75),
+        0 0 22px rgba(0,0,0,.95);
+}
+
+h1 span{
+    display:block;
+    margin-top:6px;
+    font-size:38px;
+    color:#d6a84f;
+    letter-spacing:12px;
+    text-shadow:
+        0 0 16px rgba(214,168,79,.35),
+        0 2px 0 rgba(0,0,0,.85);
 }
 
 .subtitle{
-
-    color:#d6a84f;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-    margin-bottom:22px;
-
-    text-shadow:
-    0 0 10px rgba(0,0,0,.8);
-}
-
-/* SERVER BOX */
-
-.info-box{
-
-    margin:18px 0 28px;
-
-    padding:18px;
-
-    border-radius:20px;
-
-    background:rgba(0,0,0,.30);
-
-    border:1px solid rgba(255,255,255,.10);
-
-    text-align:left;
-
-    line-height:1.8;
-
-    font-size:16px;
-
-    color:white;
-
-    text-shadow:
-    0 0 8px rgba(0,0,0,.9);
-}
-
-.info-box strong{
-
-    color:#d6a84f;
-
-    -webkit-text-stroke:0.4px #000;
-
-    text-shadow:
-    0 0 8px rgba(214,168,79,.55),
-    1px 1px 0 #000;
-}
-
-.info-box span{
-
-    color:#ffffff;
-
-    -webkit-text-stroke:0.35px rgba(0,0,0,.75);
-
-    text-shadow:
-    0 0 8px rgba(0,0,0,.95),
-    1px 1px 0 rgba(0,0,0,.65);
-}
-
-/* SECTION */
-
-.section-title{
-
-    margin-bottom:14px;
-
-    font-size:17px;
-
-    letter-spacing:1px;
-
-    color:#f1f1f1;
-
-    text-transform:uppercase;
-
-    text-shadow:
-    0 0 10px rgba(0,0,0,.8);
-}
-
-/* BUTTONS */
-
-.btn{
-
-    width:100%;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
-    gap:12px;
-
-    margin:14px 0;
-
-    padding:17px;
-
-    border-radius:18px;
-
-    text-decoration:none;
-
-    font-size:21px;
-
+    gap:14px;
+    color:#e7c471;
+    font-size:15px;
     font-weight:bold;
+    letter-spacing:7px;
+    text-transform:uppercase;
+    margin-bottom:28px;
+    text-shadow:0 0 10px rgba(0,0,0,.95);
+}
 
+.subtitle::before,
+.subtitle::after{
+    content:"";
+    width:58px;
+    height:1px;
+    background:linear-gradient(90deg, transparent, rgba(214,168,79,.85));
+}
+
+.subtitle::after{
+    background:linear-gradient(90deg, rgba(214,168,79,.85), transparent);
+}
+
+/* SERVER BOX PREMIUM */
+.info-box{
+    margin:18px 0 24px;
+    display:grid;
+    gap:7px;
+    text-align:left;
+}
+
+.info-box div{
+    display:grid;
+    grid-template-columns:32px 1fr 1fr;
+    align-items:center;
+    gap:12px;
+    min-height:43px;
+    padding:10px 14px;
+    border-radius:8px;
+    background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(0,0,0,.25));
+    border:1px solid rgba(255,255,255,.13);
+    box-shadow:0 0 14px rgba(0,0,0,.28) inset;
+}
+
+.info-box div::before{
+    font-size:20px;
+    color:#d6a84f;
+    text-align:center;
+    filter:drop-shadow(0 0 5px rgba(214,168,79,.45));
+}
+
+.info-box div:nth-child(1)::before{ content:"▦"; }
+.info-box div:nth-child(2)::before{ content:"▣"; }
+.info-box div:nth-child(3)::before{ content:"◆"; }
+.info-box div:nth-child(4)::before{ content:"♛"; }
+
+.info-box strong{
+    color:#d6a84f;
+    font-size:14px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    text-shadow:0 0 8px rgba(214,168,79,.35);
+}
+
+.info-box span{
+    color:#ffffff;
+    font-size:15px;
+    text-align:right;
+    text-shadow:0 0 8px rgba(0,0,0,.95);
+}
+
+/* SECTION */
+.section-title{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:13px;
+    margin:20px 0 16px;
+    font-size:14px;
+    letter-spacing:4px;
+    color:#f1f1f1;
+    text-transform:uppercase;
+    text-shadow:0 0 10px rgba(0,0,0,.95);
+}
+
+.section-title::before,
+.section-title::after{
+    content:"";
+    width:34px;
+    height:1px;
+    background:rgba(214,168,79,.8);
+    box-shadow:0 0 9px rgba(214,168,79,.7);
+}
+
+/* BUTTONS PREMIUM */
+.links-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.btn{
+    position:relative;
+    min-height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:13px;
+    padding:14px 16px;
+    border-radius:9px;
+    text-decoration:none;
     color:white;
+    background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(0,0,0,.30));
+    border:1px solid rgba(255,255,255,.16);
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.04) inset,
+        0 12px 22px rgba(0,0,0,.34);
+    overflow:hidden;
+    transition:.25s ease;
+}
 
-    background:rgba(0,0,0,.28);
-
-    border:1px solid rgba(255,255,255,.12);
-
-    transition:.25s;
+.btn::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.09), transparent);
+    transform:translateX(-120%);
+    transition:.45s ease;
 }
 
 .btn:hover{
+    transform:translateY(-3px) scale(1.015);
+}
 
-    transform:scale(1.03);
-
-    background:rgba(214,168,79,.18);
-
-    box-shadow:
-    0 0 22px rgba(214,168,79,.30);
+.btn:hover::after{
+    transform:translateX(120%);
 }
 
 .btn img{
-
-    width:26px;
-    height:26px;
-
+    width:34px;
+    height:34px;
     object-fit:contain;
+    flex:0 0 auto;
+    filter:drop-shadow(0 0 8px rgba(255,255,255,.20));
 }
 
+.btn span{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    line-height:1.05;
+    font-size:20px;
+    font-weight:900;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.btn small{
+    margin-top:5px;
+    font-size:9px;
+    letter-spacing:1px;
+    color:rgba(255,255,255,.72);
+    font-weight:700;
+}
+
+.btn.discord{ border-color:rgba(110,120,255,.72); box-shadow:0 0 18px rgba(88,101,242,.23); }
+.btn.tiktok{ border-color:rgba(0,245,255,.68); box-shadow:0 0 18px rgba(0,245,255,.18); }
+.btn.youtube{ border-color:rgba(255,55,55,.68); box-shadow:0 0 18px rgba(255,55,55,.18); }
+.btn.donate{ border-color:rgba(214,168,79,.72); box-shadow:0 0 18px rgba(214,168,79,.20); }
+
 /* FOOTER */
-
 .footer{
-
-    margin-top:24px;
-
+    margin-top:26px;
     color:#ddd;
-
-    font-size:14px;
-
-    text-shadow:
-    0 0 10px rgba(0,0,0,.9);
+    font-size:13px;
+    text-shadow:0 0 10px rgba(0,0,0,.9);
 }
 
 .footer a{
-
     color:#d6a84f;
-
     text-decoration:none;
-
     font-weight:bold;
-
     transition:.25s;
 }
 
 .footer a:hover{
-
     color:white;
-
-    text-shadow:
-    0 0 10px #d6a84f;
+    text-shadow:0 0 10px #d6a84f;
 }
 
 /* MOBILE */
-
 @media(max-width:900px){
-
     body{
-
         background:
-        linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.45)),
+        linear-gradient(rgba(0,0,0,.22),rgba(0,0,0,.55)),
         url("main-bg-mobile.png");
-
         background-size:cover;
         background-position:center center;
         background-repeat:no-repeat;
@@ -296,95 +346,117 @@ h1{
     }
 
     .main{
-
         min-height:100svh;
-
-        padding:8px 10px;
-
+        padding:58px 10px 10px;
         align-items:center;
         justify-content:center;
     }
 
     .card{
-
-        max-width:285px;
-
-        padding:15px 14px 14px;
-
-        border-radius:22px;
+        max-width:330px;
+        padding:55px 17px 16px;
+        border-radius:21px;
+        backdrop-filter:blur(5px);
+        -webkit-backdrop-filter:blur(5px);
     }
 
     .logo{
-
-        width:65px;
-        height:65px;
-
-        margin-bottom:10px;
+        width:74px;
+        height:74px;
+        top:-34px;
     }
 
     h1{
+        font-size:31px;
+        letter-spacing:3px;
+        margin-bottom:9px;
+    }
 
-        font-size:28px;
-
-        line-height:1;
-
-        letter-spacing:2px;
-
-        margin-bottom:5px;
+    h1 span{
+        font-size:21px;
+        letter-spacing:7px;
+        margin-top:4px;
     }
 
     .subtitle{
+        font-size:10px;
+        letter-spacing:4px;
+        gap:8px;
+        margin-bottom:16px;
+    }
 
-        font-size:13px;
-
-        margin-bottom:10px;
+    .subtitle::before,
+    .subtitle::after{
+        width:28px;
     }
 
     .info-box{
-
         margin:10px 0 14px;
-
-        padding:10px;
-
-        border-radius:16px;
-
-        font-size:11px;
-
-        line-height:1.5;
+        gap:5px;
     }
 
+    .info-box div{
+        grid-template-columns:22px 1fr 1fr;
+        min-height:34px;
+        gap:8px;
+        padding:7px 9px;
+        border-radius:7px;
+    }
+
+    .info-box div::before{ font-size:15px; }
+    .info-box strong{ font-size:9px; letter-spacing:.8px; }
+    .info-box span{ font-size:10px; }
+
     .section-title{
-
-        font-size:11px;
-
-        margin-bottom:8px;
-
+        font-size:9px;
+        letter-spacing:2px;
+        gap:7px;
+        margin:13px 0 11px;
         line-height:1.2;
     }
 
+    .section-title::before,
+    .section-title::after{ width:18px; }
+
+    .links-grid{
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+    }
+
     .btn{
-
-        margin:7px 0;
-
-        padding:10px;
-
-        border-radius:14px;
-
-        font-size:14px;
+        min-height:50px;
+        gap:8px;
+        padding:9px 10px;
+        border-radius:8px;
     }
 
     .btn img{
+        width:24px;
+        height:24px;
+    }
 
-        width:18px;
-        height:18px;
+    .btn span{
+        font-size:13px;
+        letter-spacing:.5px;
+    }
+
+    .btn small{
+        margin-top:3px;
+        font-size:6px;
+        letter-spacing:.6px;
     }
 
     .footer{
-
-        margin-top:10px;
-
-        font-size:9px;
+        margin-top:12px;
+        font-size:8px;
     }
+}
+
+@media(max-width:360px){
+    .card{ max-width:300px; }
+    h1{ font-size:28px; }
+    h1 span{ font-size:19px; }
+    .links-grid{ gap:7px; }
 }
 
 </style>
@@ -400,7 +472,7 @@ h1{
             <img src="avatar.png">
         </div>
 
-        <h1>RAGNAR LODBROK</h1>
+        <h1>RAGNAR <span>LODBROK</span></h1>
 
         <div class="subtitle">
             Official Online Links
@@ -434,25 +506,29 @@ h1{
             Unde îl puteți găsi pe Ragnar online
         </div>
 
-        <a class="btn" href="https://discord.gg/DGcmfJT8G" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png">
-            Discord
-        </a>
+        <div class="links-grid">
 
-        <a class="btn" href="https://www.tiktok.com/@ragnarokczr" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
-            TikTok
-        </a>
+            <a class="btn discord" href="https://discord.gg/DGcmfJT8G" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png">
+                <span>Discord <small>Join the community</small></span>
+            </a>
 
-        <a class="btn" href="https://www.youtube.com/@RagnarCZR" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
-            YouTube
-        </a>
+            <a class="btn tiktok" href="https://www.tiktok.com/@ragnarokczr" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+                <span>TikTok <small>Follow for more</small></span>
+            </a>
 
-        <a class="btn" href="https://www.tipeeestream.com/ragnarokczr/donation" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png">
-            Susținere
-        </a>
+            <a class="btn youtube" href="https://www.youtube.com/@RagnarCZR" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+                <span>YouTube <small>Watch videos</small></span>
+            </a>
+
+            <a class="btn donate" href="https://www.tipeeestream.com/ragnarokczr/donation" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png">
+                <span>Susținere <small>Support Ragnar</small></span>
+            </a>
+
+        </div>
 
         <div class="footer">
 
