@@ -333,61 +333,75 @@ h1 span{
     text-shadow:0 0 10px #d6a84f;
 }
 
-/* MOBILE */
+/* MOBILE PREMIUM */
 @media(max-width:900px){
+
     body{
         background:
-        linear-gradient(rgba(0,0,0,.22),rgba(0,0,0,.55)),
+        linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.42)),
         url("main-bg-mobile.png");
-        background-size:cover;
-        background-position:center center;
+
+        background-size:100% auto;
+        background-position:center top;
         background-repeat:no-repeat;
         background-attachment:scroll;
     }
 
     .main{
         min-height:100svh;
-        padding:58px 10px 10px;
+        padding:40px 10px 20px;
         align-items:center;
         justify-content:center;
     }
 
     .card{
-        max-width:330px;
-        padding:55px 17px 16px;
-        border-radius:21px;
-        backdrop-filter:blur(5px);
-        -webkit-backdrop-filter:blur(5px);
+        max-width:255px;
+        padding:48px 14px 14px;
+        border-radius:20px;
+
+        background:
+            radial-gradient(circle at top, rgba(214,168,79,.05), transparent 34%),
+            linear-gradient(180deg, rgba(10,12,14,.42), rgba(0,0,0,.20));
+
+        border:1px solid rgba(255,215,120,.45);
+
+        box-shadow:
+            0 0 0 1px rgba(255,255,255,.04) inset,
+            0 0 22px rgba(214,168,79,.12),
+            0 18px 50px rgba(0,0,0,.55);
+
+        backdrop-filter:blur(4px);
+        -webkit-backdrop-filter:blur(4px);
     }
 
     .logo{
-        width:74px;
-        height:74px;
-        top:-34px;
+        width:70px;
+        height:70px;
+        top:-32px;
     }
 
     h1{
-        font-size:31px;
-        letter-spacing:3px;
-        margin-bottom:9px;
+        font-size:28px;
+        letter-spacing:2px;
+        margin-bottom:8px;
     }
 
     h1 span{
-        font-size:21px;
-        letter-spacing:7px;
-        margin-top:4px;
+        font-size:18px;
+        letter-spacing:5px;
+        margin-top:3px;
     }
 
     .subtitle{
-        font-size:10px;
-        letter-spacing:4px;
-        gap:8px;
-        margin-bottom:16px;
+        font-size:9px;
+        letter-spacing:3px;
+        gap:7px;
+        margin-bottom:14px;
     }
 
     .subtitle::before,
     .subtitle::after{
-        width:28px;
+        width:22px;
     }
 
     .info-box{
@@ -396,67 +410,90 @@ h1 span{
     }
 
     .info-box div{
-        grid-template-columns:22px 1fr 1fr;
-        min-height:34px;
-        gap:8px;
-        padding:7px 9px;
+        grid-template-columns:20px 1fr 1fr;
+        min-height:32px;
+        gap:7px;
+        padding:6px 8px;
         border-radius:7px;
     }
 
-    .info-box div::before{ font-size:15px; }
-    .info-box strong{ font-size:9px; letter-spacing:.8px; }
-    .info-box span{ font-size:10px; }
+    .info-box div::before{
+        font-size:13px;
+    }
+
+    .info-box strong{
+        font-size:8px;
+        letter-spacing:.5px;
+    }
+
+    .info-box span{
+        font-size:9px;
+    }
 
     .section-title{
-        font-size:9px;
-        letter-spacing:2px;
-        gap:7px;
-        margin:13px 0 11px;
+        font-size:8px;
+        letter-spacing:1.5px;
+        gap:6px;
+        margin:12px 0 10px;
         line-height:1.2;
     }
 
     .section-title::before,
-    .section-title::after{ width:18px; }
+    .section-title::after{
+        width:15px;
+    }
 
     .links-grid{
         grid-template-columns:1fr 1fr;
-        gap:8px;
+        gap:7px;
     }
 
     .btn{
-        min-height:50px;
-        gap:8px;
-        padding:9px 10px;
-        border-radius:8px;
+        min-height:46px;
+        gap:7px;
+        padding:8px 8px;
+        border-radius:7px;
     }
 
     .btn img{
-        width:24px;
-        height:24px;
+        width:21px;
+        height:21px;
     }
 
     .btn span{
-        font-size:13px;
-        letter-spacing:.5px;
+        font-size:11px;
+        letter-spacing:.3px;
     }
 
     .btn small{
-        margin-top:3px;
-        font-size:6px;
-        letter-spacing:.6px;
+        margin-top:2px;
+        font-size:5px;
+        letter-spacing:.4px;
     }
 
     .footer{
-        margin-top:12px;
-        font-size:8px;
+        margin-top:10px;
+        font-size:7px;
     }
 }
 
 @media(max-width:360px){
-    .card{ max-width:300px; }
-    h1{ font-size:28px; }
-    h1 span{ font-size:19px; }
-    .links-grid{ gap:7px; }
+
+    .card{
+        max-width:235px;
+    }
+
+    h1{
+        font-size:25px;
+    }
+
+    h1 span{
+        font-size:17px;
+    }
+
+    .links-grid{
+        gap:6px;
+    }
 }
 
 </style>
