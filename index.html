@@ -333,12 +333,12 @@ h1 span{
     text-shadow:0 0 10px #d6a84f;
 }
 
-/* MOBILE PREMIUM */
+/* MOBILE PREMIUM - chenar mutat pe cer + mai lat si mai ingust */
 @media(max-width:900px){
 
     body{
         background:
-        linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.42)),
+        linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.34)),
         url("main-bg-mobile.png");
 
         background-size:100% auto;
@@ -349,81 +349,99 @@ h1 span{
 
     .main{
         min-height:100svh;
-        padding:40px 10px 20px;
-        align-items:center;
+        padding:155px 10px 20px; /* muta chenarul mai sus, in zona de cer */
+        align-items:flex-start;
         justify-content:center;
     }
 
     .card{
-        max-width:255px;
-        padding:48px 14px 14px;
-        border-radius:20px;
+        width:calc(100vw - 24px);
+        max-width:390px;          /* mai lat stanga-dreapta */
+        padding:36px 18px 12px;   /* mai ingust sus-jos */
+        border-radius:18px;
 
         background:
-            radial-gradient(circle at top, rgba(214,168,79,.05), transparent 34%),
-            linear-gradient(180deg, rgba(10,12,14,.42), rgba(0,0,0,.20));
+            radial-gradient(circle at top, rgba(214,168,79,.055), transparent 34%),
+            linear-gradient(180deg, rgba(10,12,14,.46), rgba(0,0,0,.22));
 
-        border:1px solid rgba(255,215,120,.45);
+        border:1px solid rgba(255,215,120,.42);
 
         box-shadow:
             0 0 0 1px rgba(255,255,255,.04) inset,
-            0 0 22px rgba(214,168,79,.12),
-            0 18px 50px rgba(0,0,0,.55);
+            0 0 18px rgba(214,168,79,.10),
+            0 14px 42px rgba(0,0,0,.50);
 
         backdrop-filter:blur(4px);
         -webkit-backdrop-filter:blur(4px);
     }
 
+    .card::before,
+    .card::after{
+        width:42%;
+    }
+
     .logo{
-        width:70px;
-        height:70px;
-        top:-32px;
+        width:62px;
+        height:62px;
+        top:-28px;
+        border-width:2px;
+        box-shadow:
+            0 0 0 4px rgba(0,0,0,.55),
+            0 0 18px rgba(214,168,79,.72),
+            0 0 32px rgba(214,168,79,.25);
+    }
+
+    .logo::before{
+        top:-15px;
+        font-size:16px;
     }
 
     h1{
-        font-size:28px;
-        letter-spacing:2px;
-        margin-bottom:8px;
+        font-size:26px;
+        letter-spacing:4px;
+        margin-bottom:6px;
+        line-height:.92;
     }
 
     h1 span{
-        font-size:18px;
-        letter-spacing:5px;
+        font-size:16px;
+        letter-spacing:8px;
         margin-top:3px;
     }
 
     .subtitle{
-        font-size:9px;
-        letter-spacing:3px;
-        gap:7px;
-        margin-bottom:14px;
+        font-size:8px;
+        letter-spacing:4px;
+        gap:8px;
+        margin-bottom:10px;
+        line-height:1.15;
     }
 
     .subtitle::before,
     .subtitle::after{
-        width:22px;
+        width:34px;
     }
 
     .info-box{
-        margin:10px 0 14px;
-        gap:5px;
+        margin:8px 0 10px;
+        gap:4px;
     }
 
     .info-box div{
         grid-template-columns:20px 1fr 1fr;
-        min-height:32px;
+        min-height:27px;
         gap:7px;
-        padding:6px 8px;
+        padding:5px 9px;
         border-radius:7px;
     }
 
     .info-box div::before{
-        font-size:13px;
+        font-size:12px;
     }
 
     .info-box strong{
         font-size:8px;
-        letter-spacing:.5px;
+        letter-spacing:.6px;
     }
 
     .info-box span{
@@ -432,26 +450,26 @@ h1 span{
 
     .section-title{
         font-size:8px;
-        letter-spacing:1.5px;
-        gap:6px;
-        margin:12px 0 10px;
-        line-height:1.2;
+        letter-spacing:2.1px;
+        gap:7px;
+        margin:9px 0 8px;
+        line-height:1.15;
     }
 
     .section-title::before,
     .section-title::after{
-        width:15px;
+        width:22px;
     }
 
     .links-grid{
         grid-template-columns:1fr 1fr;
-        gap:7px;
+        gap:8px;
     }
 
     .btn{
-        min-height:46px;
-        gap:7px;
-        padding:8px 8px;
+        min-height:39px;
+        gap:8px;
+        padding:7px 9px;
         border-radius:7px;
     }
 
@@ -461,38 +479,51 @@ h1 span{
     }
 
     .btn span{
-        font-size:11px;
-        letter-spacing:.3px;
+        font-size:12px;
+        letter-spacing:.4px;
     }
 
     .btn small{
         margin-top:2px;
         font-size:5px;
-        letter-spacing:.4px;
+        letter-spacing:.45px;
     }
 
     .footer{
-        margin-top:10px;
+        margin-top:8px;
         font-size:7px;
     }
 }
 
+/* Telefoane foarte inguste */
 @media(max-width:360px){
 
+    .main{
+        padding-top:135px;
+    }
+
     .card{
-        max-width:235px;
+        width:calc(100vw - 18px);
+        max-width:342px;
+        padding:34px 13px 10px;
     }
 
     h1{
-        font-size:25px;
+        font-size:24px;
+        letter-spacing:3px;
     }
 
     h1 span{
-        font-size:17px;
+        font-size:15px;
+        letter-spacing:6px;
     }
 
     .links-grid{
         gap:6px;
+    }
+
+    .btn{
+        padding:7px 7px;
     }
 }
 
