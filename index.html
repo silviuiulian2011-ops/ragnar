@@ -52,12 +52,12 @@ body{
     border-radius:28px;
     text-align:center;
     background:
-        radial-gradient(circle at top, rgba(214,168,79,.10), transparent 34%),
-        linear-gradient(180deg, rgba(10,12,14,.78), rgba(0,0,0,.58));
+        radial-gradient(circle at top, rgba(214,168,79,.08), transparent 34%),
+        linear-gradient(180deg, rgba(10,12,14,.68), rgba(0,0,0,.48));
     border:1px solid rgba(255,215,120,.55);
     box-shadow:
         0 0 0 1px rgba(255,255,255,.06) inset,
-        0 0 36px rgba(214,168,79,.22),
+        0 0 50px rgba(214,168,79,.30),
         0 25px 80px rgba(0,0,0,.80);
     backdrop-filter:blur(7px);
     -webkit-backdrop-filter:blur(7px);
@@ -125,6 +125,7 @@ h1{
     color:white;
     text-shadow:
         0 2px 0 rgba(0,0,0,.75),
+        0 0 30px rgba(214,168,79,.25),
         0 0 22px rgba(0,0,0,.95);
 }
 
@@ -237,6 +238,138 @@ h1 span{
     box-shadow:0 0 9px rgba(214,168,79,.7);
 }
 
+
+/* DISCORD LIVE CARD PREMIUM */
+.discord-live-card{
+    position:relative;
+    margin:8px 0 22px;
+    padding:18px 18px 16px;
+    border-radius:16px;
+    background:
+        radial-gradient(circle at top left, rgba(88,101,242,.22), transparent 38%),
+        linear-gradient(180deg, rgba(255,255,255,.065), rgba(0,0,0,.32));
+    border:1px solid rgba(114,137,218,.55);
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.05) inset,
+        0 0 22px rgba(88,101,242,.20),
+        0 0 18px rgba(214,168,79,.10);
+    overflow:hidden;
+}
+
+.discord-live-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:62%;
+    height:1px;
+    background:linear-gradient(90deg, transparent, rgba(114,137,218,.95), transparent);
+    box-shadow:0 0 12px rgba(88,101,242,.85);
+}
+
+.discord-live-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom:13px;
+}
+
+.discord-live-title{
+    text-align:left;
+}
+
+.discord-live-title strong{
+    display:block;
+    color:#d6a84f;
+    font-size:14px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    text-shadow:0 0 10px rgba(214,168,79,.35);
+}
+
+.discord-live-title span{
+    display:block;
+    margin-top:4px;
+    color:rgba(255,255,255,.70);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+}
+
+.discord-live-icon{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(88,101,242,.18);
+    border:1px solid rgba(114,137,218,.55);
+    box-shadow:0 0 18px rgba(88,101,242,.28);
+}
+
+.discord-live-icon img{
+    width:24px;
+    height:24px;
+    object-fit:contain;
+    filter:drop-shadow(0 0 7px rgba(255,255,255,.25));
+}
+
+.discord-live-body{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:14px;
+    padding:12px 14px;
+    border-radius:12px;
+    background:linear-gradient(180deg, rgba(0,0,0,.22), rgba(255,255,255,.045));
+    border:1px solid rgba(255,255,255,.10);
+}
+
+.discord-online-number{
+    color:#fff;
+    font-size:44px;
+    line-height:.9;
+    font-weight:900;
+    letter-spacing:1px;
+    text-shadow:
+        0 0 16px rgba(88,101,242,.45),
+        0 0 16px rgba(214,168,79,.18);
+}
+
+.discord-online-label{
+    color:#d6a84f;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    text-align:left;
+}
+
+.discord-live-status{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    color:rgba(255,255,255,.82);
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1.7px;
+    text-transform:uppercase;
+    white-space:nowrap;
+}
+
+.discord-live-status::before{
+    content:"";
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#41ff8b;
+    box-shadow:0 0 10px rgba(65,255,139,.95);
+}
+
 /* BUTTONS PREMIUM */
 .links-grid{
     display:grid;
@@ -333,6 +466,149 @@ h1 span{
     text-shadow:0 0 10px #d6a84f;
 }
 
+
+/* PREMIUM DASHBOARD UPGRADE - PC */
+@keyframes premiumCardPulse{
+    0%,100%{
+        box-shadow:
+            0 0 0 1px rgba(255,255,255,.06) inset,
+            0 0 42px rgba(214,168,79,.22),
+            0 25px 80px rgba(0,0,0,.80);
+    }
+    50%{
+        box-shadow:
+            0 0 0 1px rgba(255,255,255,.08) inset,
+            0 0 62px rgba(214,168,79,.34),
+            0 25px 80px rgba(0,0,0,.80);
+    }
+}
+
+@media(min-width:901px){
+
+    .card{
+        max-width:640px;
+        padding:74px 38px 28px;
+        animation:premiumCardPulse 5.5s ease-in-out infinite;
+    }
+
+    h1{
+        font-size:52px;
+        margin-bottom:10px;
+    }
+
+    h1 span{
+        font-size:34px;
+        margin-top:4px;
+    }
+
+    .subtitle{
+        margin-bottom:20px;
+    }
+
+    .info-box{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+        margin:14px 0 16px;
+    }
+
+    .info-box div{
+        min-height:50px;
+        padding:11px 13px;
+        border-radius:12px;
+        background:
+            radial-gradient(circle at top left, rgba(214,168,79,.10), transparent 42%),
+            linear-gradient(180deg, rgba(255,255,255,.065), rgba(0,0,0,.28));
+        border:1px solid rgba(255,215,120,.16);
+    }
+
+    .info-box strong{
+        font-size:12px;
+        letter-spacing:1.2px;
+    }
+
+    .info-box span{
+        font-size:14px;
+    }
+
+    .discord-live-card{
+        margin:10px 0 16px;
+        padding:14px 16px;
+        border-radius:18px;
+    }
+
+    .discord-live-head{
+        margin-bottom:10px;
+    }
+
+    .discord-live-body{
+        padding:10px 14px;
+    }
+
+    .discord-online-number{
+        font-size:38px;
+    }
+
+    .section-title{
+        margin:14px 0 12px;
+        font-size:12px;
+        letter-spacing:4px;
+    }
+
+    .links-grid{
+        gap:10px;
+    }
+
+    .btn{
+        min-height:58px;
+        padding:11px 14px;
+        border-radius:12px;
+    }
+
+    .btn span{
+        font-size:18px;
+    }
+
+    .footer{
+        margin-top:16px;
+    }
+}
+
+/* FIX PC - CARD COMPLET FARA SCROLL */
+@media(min-width:901px){
+
+    html,body{
+        height:100vh;
+        min-height:100vh;
+        overflow:hidden;
+    }
+
+    .main{
+        height:100vh;
+        min-height:100vh;
+        padding:0 15px;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .card{
+        transform:scale(.82);
+        transform-origin:center center;
+        padding-top:74px;
+    }
+
+    .logo{
+        top:-26px;
+        width:92px;
+        height:92px;
+    }
+
+    .logo::before{
+        top:-13px;
+        font-size:17px;
+    }
+}
+
 /* MOBILE - CARD SUS PE CER, DEASUPRA PERSONAJELOR */
 @media(max-width:900px){
 
@@ -358,16 +634,16 @@ h1 span{
         min-height:100svh;
         align-items:flex-start;
         justify-content:center;
-        padding:24px 8px 0;
+        padding:18px 6px 0;
     }
 
     .card{
     width:92%;
-    max-width:350px;
-    padding:30px 12px 8px;
-    border-radius:28px;
+    max-width:330px;
+    padding:25px 10px 6px;
+    border-radius:22px;
 
-    transform:scale(1.04);
+    transform:none;
     transform-origin:top center;
     margin-top:0;
 
@@ -389,9 +665,9 @@ h1 span{
 }
 
     .logo{
-        width:54px;
-        height:54px;
-        top:-25px;
+        width:46px;
+        height:46px;
+        top:-22px;
         border-width:2px;
         box-shadow:
             0 0 0 3px rgba(0,0,0,.55),
@@ -399,104 +675,163 @@ h1 span{
     }
 
     .logo::before{
-        top:-13px;
-        font-size:15px;
+        top:-11px;
+        font-size:13px;
     }
 
     h1{
-        font-size:22px;
-        letter-spacing:2px;
-        margin-bottom:5px;
+        font-size:19px;
+        letter-spacing:1.6px;
+        margin-bottom:4px;
     }
 
     h1 span{
-        font-size:14px;
-        letter-spacing:4px;
-        margin-top:2px;
+        font-size:12px;
+        letter-spacing:3px;
+        margin-top:1px;
     }
 
     .subtitle{
-        font-size:7px;
-        letter-spacing:2px;
-        gap:5px;
-        margin-bottom:8px;
+        font-size:6px;
+        letter-spacing:1.4px;
+        gap:4px;
+        margin-bottom:6px;
     }
 
     .subtitle::before,
     .subtitle::after{
-        width:18px;
+        width:14px;
     }
 
     .info-box{
-        margin:6px 0 8px;
-        gap:3px;
+        margin:5px 0 6px;
+        gap:2px;
     }
 
     .info-box div{
-        grid-template-columns:16px 1fr 1fr;
-        min-height:24px;
-        gap:5px;
-        padding:4px 7px;
-        border-radius:6px;
+        grid-template-columns:14px 1fr 1fr;
+        min-height:20px;
+        gap:4px;
+        padding:3px 6px;
+        border-radius:5px;
     }
 
     .info-box div::before{
-        font-size:10px;
+        font-size:9px;
     }
 
     .info-box strong{
-        font-size:7px;
-        letter-spacing:.3px;
+        font-size:6px;
+        letter-spacing:.2px;
     }
 
     .info-box span{
-        font-size:8px;
+        font-size:7px;
+    }
+
+
+    .discord-live-card{
+        margin:4px 0 6px;
+        padding:6px 7px;
+        border-radius:8px;
+    }
+
+    .discord-live-head{
+        margin-bottom:4px;
+        gap:4px;
+    }
+
+    .discord-live-title strong{
+        font-size:6px;
+        letter-spacing:.6px;
+    }
+
+    .discord-live-title span{
+        margin-top:1px;
+        font-size:4px;
+        letter-spacing:.4px;
+    }
+
+    .discord-live-icon{
+        width:18px;
+        height:18px;
+    }
+
+    .discord-live-icon img{
+        width:10px;
+        height:10px;
+    }
+
+    .discord-live-body{
+        padding:4px 6px;
+        border-radius:6px;
+        gap:5px;
+    }
+
+    .discord-online-number{
+        font-size:16px;
+    }
+
+    .discord-online-label{
+        font-size:4px;
+        letter-spacing:.4px;
+    }
+
+    .discord-live-status{
+        font-size:4px;
+        letter-spacing:.4px;
+        gap:3px;
+    }
+
+    .discord-live-status::before{
+        width:4px;
+        height:4px;
     }
 
     .section-title{
-        font-size:7px;
-        letter-spacing:1px;
-        gap:5px;
-        margin:7px 0 6px;
+        font-size:6px;
+        letter-spacing:.8px;
+        gap:4px;
+        margin:5px 0 5px;
         line-height:1.1;
     }
 
     .section-title::before,
     .section-title::after{
-        width:12px;
+        width:10px;
     }
 
     .links-grid{
         grid-template-columns:1fr 1fr;
-        gap:5px;
+        gap:4px;
     }
 
     .btn{
-        min-height:33px;
-        gap:5px;
-        padding:5px 6px;
-        border-radius:6px;
+        min-height:28px;
+        gap:4px;
+        padding:4px 5px;
+        border-radius:5px;
     }
 
     .btn img{
-        width:16px;
-        height:16px;
+        width:13px;
+        height:13px;
     }
 
     .btn span{
-        font-size:8px;
-        letter-spacing:.2px;
+        font-size:7px;
+        letter-spacing:.15px;
     }
 
     .btn small{
         margin-top:1px;
-        font-size:4px;
-        letter-spacing:.2px;
+        font-size:3px;
+        letter-spacing:.15px;
     }
 
     .footer{
-        margin-top:6px;
-        font-size:6px;
+        margin-top:4px;
+        font-size:5px;
     }
 }
 
@@ -504,12 +839,13 @@ h1 span{
 @media(max-width:360px){
 
     .main{
-        padding-top:20px;
+        padding-top:14px;
     }
 
     .card{
-        max-width:330px;
-        transform:scale(.68);
+        max-width:310px;
+        padding:22px 8px 5px;
+        transform:none;
         transform-origin:top center;
     }
 }
@@ -557,13 +893,39 @@ h1 span{
 
         </div>
 
+        <div class="discord-live-card">
+
+            <div class="discord-live-head">
+                <div class="discord-live-title">
+                    <strong>Bârlogul Ragnanienilor</strong>
+                    <span>Discord Oficial</span>
+                </div>
+
+                <div class="discord-live-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord">
+                </div>
+            </div>
+
+            <div class="discord-live-body">
+                <div>
+                    <div class="discord-online-number" id="discordOnline">--</div>
+                    <div class="discord-online-label">Membri online</div>
+                </div>
+
+                <div class="discord-live-status" id="discordStatus">
+                    Live
+                </div>
+            </div>
+
+        </div>
+
         <div class="section-title">
             Unde îl puteți găsi pe Ragnar Lodbrok online
         </div>
 
         <div class="links-grid">
 
-            <a class="btn discord" href="http://discord.gg/nasDZ5maKS" target="_blank">
+            <a class="btn discord" href="https://discord.gg/nasDZ5maKS" target="_blank">
                 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png">
                 <span>Discord <small>Join the community</small></span>
             </a>
@@ -598,6 +960,33 @@ h1 span{
     </div>
 
 </div>
+
+<script>
+const discordOnline = document.getElementById("discordOnline");
+const discordStatus = document.getElementById("discordStatus");
+
+async function loadDiscordStats(){
+    try{
+        const response = await fetch("https://discord.com/api/guilds/1478448693819736167/widget.json");
+
+        if(!response.ok){
+            throw new Error("Discord widget unavailable");
+        }
+
+        const data = await response.json();
+        const online = data.presence_count ?? (data.members ? data.members.length : "--");
+
+        discordOnline.textContent = online;
+        discordStatus.textContent = "Live";
+    }catch(error){
+        discordOnline.textContent = "--";
+        discordStatus.textContent = "Offline";
+    }
+}
+
+loadDiscordStats();
+setInterval(loadDiscordStats, 60000);
+</script>
 
 </body>
 </html>
